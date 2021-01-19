@@ -24,7 +24,7 @@ textarea {
     "header"
     "main"
     "footer";
-  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-rows: 6rem 1fr 5rem;
   grid-template-columns: 1fr;
   height: 100%;
 }
@@ -36,13 +36,21 @@ a:hover {
 }
 header {
   grid-area: header;
-  background-color: #3c2050;
+  background-color: #8f0982;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
 }
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0.5rem 0.25rem;
+}
+
 header a {
   color: #ffffff;
   text-decoration: none;
@@ -118,7 +126,7 @@ footer {
   border: 0.1rem #808080 solid;
 }
 .button.primary {
-  background-color: #f0c040;
+  background-color: #46cbd8;
 }
 /* Filter */
 .filter {
