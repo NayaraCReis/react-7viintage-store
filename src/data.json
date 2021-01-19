@@ -1,0 +1,100 @@
+{
+    "products": [
+        {
+            "_id":"jacket1",
+            "title": "Black Windbreaker jacket",
+            "image": "/images/jacket1.jpg",
+            "description": "Black Windbreaker size XS available",
+            "price": 22.90,
+            "availableSizes": ["XS"]
+        },   
+        {
+            "_id":"jacket2",
+            "title": "Ski jacket",
+            "image": "/images/jacket2.jpg",
+            "description": "Colorful Ski jacket size S available",
+            "price": 33.90,
+            "availableSizes": ["S"]
+        },  
+        {
+            "_id":"jacket3",
+            "title": "Denim jacket",
+            "image": "/images/jacket3.jpg",
+            "description": "Denim jacket size S available",
+            "price": 28.90,
+            "availableSizes": ["S"]
+        }, 
+        {
+            "_id":"jacket4",
+            "title": "Warm winter vintage style",
+            "image": "/images/jacket4.jpg",
+            "description": "Warm winter vintage size S available",
+            "price": 33.90,
+            "availableSizes": ["S"]
+        }, 
+        {
+            "_id":"jacket5",
+            "title": "Men's jacket collection",
+            "image": "/images/jacket5.jpg",
+            "description": "Men's blue jacket collection available",
+            "price": 27.90,
+            "availableSizes": ["M"]
+        }, 
+        {
+            "_id":"jacket6",
+            "title": "K-way jacket windbreaker and waterproof",
+            "image": "/images/jacket6.jpg",
+            "description": "K-way jacket available",
+            "price": 33.90,
+            "availableSizes": ["XS"]
+        }, 
+        {
+            "_id":"jacket7",
+            "title": "Aolamite's Jacket",
+            "image": "/images/jacket7.jpg",
+            "description": "Aolamite's Jacket 2 pcs in 1 available",
+            "price": 33.90,
+            "availableSizes": ["M"]
+        }, 
+        {
+            "_id":"jacket8",
+            "title": "Adidas windbreaker jacket",
+            "image": "/images/jacket8.jpg",
+            "description": "Adidas windbreaker jacket Size XL available",
+            "price": 29.90,
+            "availableSizes": ["XL"]
+        },  
+        {
+            "_id":"jacket9",
+            "title": "Pink jacket available",
+            "image": "/images/jacket9.jpg",
+            "description": " Pink jacket available",
+            "price": 29.90,
+            "availableSizes": ["M"]
+        }, 
+         {
+            "_id":"jacket10",
+            "title": "Blue Adidas jacket",
+            "image": "/images/jacket10.jpg",
+            "description": "Adidas jacket from men's available",
+            "price": 24.90,
+            "availableSizes": ["M"]
+        }, 
+         {
+            "_id":"jacket11",
+            "title": "Vintage jacket Amsterdam",
+            "image": "/images/jacket11.jpg",
+            "description": "Stunning Vintage jacket Amsterdam available",
+            "price": 33.90,
+            "availableSizes": ["XS"]
+        },  
+        {
+            "_id":"jacket12",
+            "title": "Colorful windbreaker jacket",
+            "image": "/images/jacket12.jpg",
+            "description": "Stunning colorful jacket Size s available",
+            "price": 25.90,
+            "availableSizes": ["S"]
+        } 
+    ]
+}
