@@ -25,3 +25,16 @@ export const fetchOrders = () => (dispatch) => {
       dispatch({ type: FETCH_ORDERS, payload: data });
     });
 };
+export const dispatchOrder = (order) => (dispatch) => {
+  fetch("/api/orders/dispatch", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(order),
+  })
+    .then((res) => res.json())
+    .then(() => {
+      fetchOrders();
+    });
+};

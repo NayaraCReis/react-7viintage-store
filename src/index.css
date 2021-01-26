@@ -1,3 +1,5 @@
+/* Cascading Style Sheets (CSS) for formatting that marked up content */
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 html {
@@ -8,6 +10,8 @@ body,
 #root {
   height: 100vh;
   margin: 0;
+
+  /* for all elements */
 }
 body,
 input,
@@ -28,6 +32,7 @@ textarea {
   grid-template-columns: 1fr;
   height: 100%;
 }
+/* also for all links */
 a {
   text-decoration: none;
 }

@@ -10,10 +10,11 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
+        {/* Menu */}
         <BrowserRouter>
           <div className="grid-container">
             <header>
-              <img class="logo" src="/images/vii-logo.jpg" alt="Logo" />
+              <img className="logo" src="/images/vii-logo.jpg" alt="Logo" />
               <Link to="/">Seven Vintage Store</Link>
               <Link to="/admin">Admin</Link>
             </header>

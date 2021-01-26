@@ -64,6 +64,7 @@ const Order = mongoose.model(
             count: Number,
           },
         ],
+        shipped: String
       },
       {
         timestamps: true,
@@ -77,7 +78,8 @@ const Order = mongoose.model(
       !req.body.email ||
       !req.body.address ||
       !req.body.total ||
-      !req.body.shoppingBag
+      !req.body.shoppingBag ||
+      !req.body.shipped
     ) {
       return res.send({ message: "Data is required." });
     }

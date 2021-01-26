@@ -1,14 +1,27 @@
+/* eslint-disable no-undef */
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchOrders } from "../actions/orderAction";
+import { fetchOrders, dispatchOrder } from "../actions/orderAction";
 import formatCurrency from "../util";
+
+
 
 class Orders extends Component {
   componentDidMount() {
     this.props.fetchOrders();
   }
+  
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      result: '',
+    };
+  }
+
   render() {
     const { orders } = this.props;
+    
     return !orders ? (
       <div>Orders</div>
     ) : (
@@ -24,11 +37,13 @@ class Orders extends Component {
               <th>EMAIL</th>
               <th>ADDRESS</th>
               <th>ITEMS</th>
+              <th>HAS BEEN SHIPPED</th>
+
             </tr>
           </thead>
           <tbody>
             {orders.map((order) => (
-              <tr>
+              <tr key={order._id}>
                 <td>{order._id}</td>
                 <td>{order.createdAt}</td>
                 <td> {formatCurrency(order.total)}</td>
@@ -36,11 +51,19 @@ class Orders extends Component {
                 <td>{order.email}</td>
                 <td>{order.address}</td>
                 <td>
-                  {order.shoppingBag.map((item) => (
-                    <div>
+                  {order.shoppingBag.map((item, i) => (
+                    <div key={i}>
                       {item.count} {" x "} {item.title}
                     </div>
                   ))}
+                </td>
+                <td>
+                  <input
+                    onChange={() => this.props.dispatchOrder(order)}
+                    disabled={order.shipped}
+                    value={order.shipped}
+                    type="checkbox"
+                  />
                 </td>
               </tr>
             ))}
@@ -56,5 +79,6 @@ export default connect(
   }),
   {
     fetchOrders,
+    dispatchOrder,
   }
 )(Orders);
