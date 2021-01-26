@@ -35,6 +35,6 @@ export const dispatchOrder = (order) => (dispatch) => {
   })
     .then((res) => res.json())
     .then(() => {
-      fetchOrders();
+      fetchOrders()(dispatch);
     });
 };

@@ -64,13 +64,32 @@ const Order = mongoose.model(
             count: Number,
           },
         ],
-        
+        shipped: Boolean,
       },
       {
         timestamps: true,
       }
     )
   );
+
+  app.post("/api/orders/dispatch", async (req, res) => {
+    const order = await Order.findOne ({
+      _id: req.body._id
+    });
+    await order.updateOne({
+      shipped: true
+    });
+
+    // await Order.updateOne({
+     // shipped: true},{
+     // _id: req.body._id});
+    
+    // const order = await Order(req.body);
+    // order.shipped = true;
+    // await order.save();
+
+    res.send({});
+  });
   
   app.post("/api/orders", async (req, res) => {
     if (

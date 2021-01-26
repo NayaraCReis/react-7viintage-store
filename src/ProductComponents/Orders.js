@@ -61,7 +61,7 @@ class Orders extends Component {
                   <input
                     onChange={() => this.props.dispatchOrder(order)}
                     disabled={order.shipped}
-                    value={order.shipped}
+                    checked={order.shipped}
                     type="checkbox"
                   />
                 </td>
