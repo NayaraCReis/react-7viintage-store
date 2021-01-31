@@ -1,16 +1,22 @@
-const express = require("express");
+//import
+const express = require("express"); 
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const shortid = require("shortid");
 
+// var data = require ("./build/data.json");
 const app = express();
 app.use(bodyParser.json());
 
+// deploy
 app.use("/", express.static(__dirname + "/build"));
-app.get("/", (req, res) => res.sendFile(__dirname + "/build/index.html"));
+app.get("/", (req, res) => res.sendFile
+(__dirname + "/build/index.html"));
 
+// mongodb
 mongoose.connect(
-  process.env.MONGODB_URL || "mongodb://localhost/react-sevenvintage-db", 
+  process.env.MONGODB_URL || 
+  "mongodb://localhost/react-sevenvintage-db", 
   {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -29,10 +35,13 @@ availableSizes: [String],
 }));
 
 app.get("/api/products", async (req, res) => {
-    const products = await Product.find({});
+  // is empty parameter. It means that there is no condition a 
+  //return all products that said about this.
+  const products = await Product.find({});
     res.send(products);
 });
 
+// to create a new product inside the database.
 app.post("/api/products", async (req, res)=>{
     const newProduct = new Product (req.body);
     const savedProduct = await newProduct.save();
@@ -40,7 +49,8 @@ app.post("/api/products", async (req, res)=>{
 });
 
 app.delete("/api/products/:id", async (req, res) => {
-const deletedProduct = await Product.findByIdAndDelete(req.params.id);
+const deletedProduct = await 
+Product.findByIdAndDelete(req.params.id);
 res.send(deletedProduct);
 });
 
@@ -80,14 +90,6 @@ const Order = mongoose.model(
       shipped: true
     });
 
-    // await Order.updateOne({
-     // shipped: true},{
-     // _id: req.body._id});
-    
-    // const order = await Order(req.body);
-    // order.shipped = true;
-    // await order.save();
-
     res.send({});
   });
   
@@ -117,6 +119,7 @@ const Order = mongoose.model(
   
 
 const port = process.env.PORT || 5000;
-app.listen(port, () => console.log("serve at http://localhost:5000"));
+app.listen(port, () => 
+console.log("serve at http://localhost:5000"));
 
 

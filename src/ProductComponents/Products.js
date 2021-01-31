@@ -7,6 +7,9 @@ import { connect } from "react-redux";
 import { fetchProducts } from "../actions/productActions";
 import {shoppingBasket} from "../actions/basketAction"
 
+// react component class (rcc) - implement the product list
+//props to get the list of products as a props from parent components.
+
 class Products extends Component {
   constructor(props) {
     super(props);
@@ -101,7 +104,8 @@ class Products extends Component {
   }
 }
 export default connect(
-  (state) => ({ products: state.products.filteredItems }),
+  (state) => ({ 
+    products: state.products.filteredItems }),
   {
     fetchProducts,
     shoppingBasket, 
